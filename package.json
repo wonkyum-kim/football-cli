@@ -1,0 +1,25 @@
+{
+  "name": "football-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "postinstall": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "score": "./dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.26"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^4.3.0",
+    "inquirer-autocomplete-standalone": "^0.8.1"
+  }
+}

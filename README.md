@@ -5,8 +5,9 @@
 # Installation
 
 ```shell
-git clone
+git clone https://github.com/wonkyum-kim/football-cli.git
 cd football-cli
+npm i
 npm i -g
 ```
 

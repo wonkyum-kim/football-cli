@@ -10,17 +10,17 @@ cd football-cli
 npm i -g
 ```
 
-## Usage
+# Usage
 
 ```shell
 $ score
-? Select a League Premier League
-? Select a team Newcastle United
+? Select a League:  Premier League
+? Select a team:  Newcastle United
 [Game over]
 Chelsea 3 - 2 Newcastle United
 ```
 
-## League
+# League
 
 - Premier League
 - La Liga

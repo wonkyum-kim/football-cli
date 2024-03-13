@@ -3,16 +3,16 @@ import getTeams from './lib/getTeams.js';
 import { select } from '@inquirer/prompts';
 import autocomplete from 'inquirer-autocomplete-standalone';
 import getMatch from './lib/getMatch.js';
-async function demo() {
+async function score() {
     const leagueId = await select({
-        message: 'Select a League',
+        message: 'Select a League: ',
         choices: [
             {
                 name: 'Premier League',
                 value: 47,
             },
             {
-                name: 'LaLiga',
+                name: 'La Liga',
                 value: 87,
             },
             {
@@ -31,7 +31,7 @@ async function demo() {
     });
     const teams = await getTeams(leagueId);
     const selectedTeam = await autocomplete({
-        message: 'Select a team',
+        message: 'Select a team: ',
         source: async (input) => {
             const filteredTeams = teams.filter((team) => {
                 return team.name
@@ -55,4 +55,4 @@ async function demo() {
     console.log(proceeding ? '[Live]' : '[Game over]');
     console.log(`${home} ${homeScore} - ${awayScore} ${away}`);
 }
-demo();
+score();

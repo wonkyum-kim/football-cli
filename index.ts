@@ -6,7 +6,7 @@ import getMatch from './lib/getMatch.js';
 
 async function score() {
   const leagueId = await select({
-    message: 'Select a League',
+    message: 'Select a League: ',
     choices: [
       {
         name: 'Premier League',
@@ -34,7 +34,7 @@ async function score() {
   const teams = await getTeams(leagueId);
 
   const selectedTeam = await autocomplete({
-    message: 'Select a team',
+    message: 'Select a team: ',
     source: async (input) => {
       const filteredTeams = teams.filter((team) => {
         return team.name

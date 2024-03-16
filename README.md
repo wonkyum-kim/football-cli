@@ -18,7 +18,21 @@ $ score
 ? Select a League:  Premier League
 ? Select a team:  Newcastle United
 [Game over]
-Chelsea 3 - 2 Newcastle United
+
+SV Darmstadt 2 - 5 Bayern München
+
+--- home ---
+
+- 28' Skarke
+- 95' Vilhelmsson
+
+--- away ---
+
+- 36' Musiala
+- 46' Kane
+- 64' Musiala
+- 74' Gnabry
+- 93' Tel
 ```
 
 # League

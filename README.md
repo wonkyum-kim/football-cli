@@ -15,8 +15,9 @@ npm i -g
 
 ```shell
 $ score
-? Select a League:  Premier League
-? Select a team:  Newcastle United
+? Select a League:  Bundesliga
+? Select a team:  Bayern München
+
 [Game over]
 
 SV Darmstadt 2 - 5 Bayern München
@@ -33,6 +34,7 @@ SV Darmstadt 2 - 5 Bayern München
 - 64' Musiala
 - 74' Gnabry
 - 93' Tel
+
 ```
 
 # League

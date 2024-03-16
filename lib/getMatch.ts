@@ -4,6 +4,7 @@ interface MatchProps {
   away: string;
   homeScore: string;
   awayScore: string;
+  matchId: string;
 }
 
 export default async function getMatch(LeagueId: number, teamId: number) {
@@ -15,7 +16,7 @@ export default async function getMatch(LeagueId: number, teamId: number) {
   const totalMatches = allMatches.length;
 
   for (let i = totalMatches - 1; i >= 0; --i) {
-    const { home, away, status } = allMatches[i];
+    const { home, away, status, id } = allMatches[i];
     if (home.id != teamId && away.id != teamId) continue;
     if (!status.started) continue;
     const [homeScore, awayScore] = status.scoreStr.split(' - ');
@@ -26,6 +27,7 @@ export default async function getMatch(LeagueId: number, teamId: number) {
       homeScore,
       away: away.name,
       awayScore,
+      matchId: id,
     };
 
     return matchInformation;

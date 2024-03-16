@@ -3,6 +3,7 @@ import getTeams from './lib/getTeams.js';
 import { select } from '@inquirer/prompts';
 import autocomplete from 'inquirer-autocomplete-standalone';
 import getMatch from './lib/getMatch.js';
+import getMatchDetail from './lib/getMatchDetail.js';
 
 async function score() {
   const leagueId = await select({
@@ -55,9 +56,29 @@ async function score() {
     console.log('No results...');
     return;
   }
-  const { proceeding, home, homeScore, away, awayScore } = matchInfo;
-  console.log(proceeding ? '[Live]' : '[Game over]');
-  console.log(`${home} ${homeScore} - ${awayScore} ${away}`);
+  const { proceeding, home, homeScore, away, awayScore, matchId } = matchInfo;
+
+  const {
+    time,
+    home: homeTeamGoals,
+    away: awayTeamGoals,
+  } = await getMatchDetail(matchId);
+
+  console.log(proceeding ? `\n[Live] ${time}\n` : '\n[Game over]\n');
+  console.log(`${home} ${homeScore} - ${awayScore} ${away}\n`);
+
+  console.log('--- home ---\n');
+  homeTeamGoals.forEach((goal) => {
+    const [min, name] = goal;
+    console.log(`- ${min}' ${name}`);
+  });
+
+  console.log('\n--- away ---\n');
+  awayTeamGoals.forEach((goal) => {
+    const [min, name] = goal;
+    console.log(`- ${min}' ${name}`);
+  });
+  console.log('');
 }
 
 score();
